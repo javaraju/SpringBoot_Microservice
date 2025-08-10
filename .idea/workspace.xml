@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ced4e7b1-8bcc-477b-9db1-e0d572196a80" name="Changes" comment="" />
+    <list default="true" id="ced4e7b1-8bcc-477b-9db1-e0d572196a80" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/knowladge-folder" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/knowladge-folder" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,7 +153,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1754070958554</updated>
-      <workItem from="1754070959607" duration="27561000" />
+      <workItem from="1754070959607" duration="29338000" />
     </task>
     <servers />
   </component>
