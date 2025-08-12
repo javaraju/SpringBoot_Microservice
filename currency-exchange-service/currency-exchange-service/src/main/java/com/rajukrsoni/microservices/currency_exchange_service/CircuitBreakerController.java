@@ -1,6 +1,8 @@
 package com.rajukrsoni.microservices.currency_exchange_service;
 
+import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +18,9 @@ public class CircuitBreakerController {
 
     @GetMapping("/sample-api")
 //    @Retry(name = "sample-api", fallbackMethod = "hardCodedResponse")
-    @CircuitBreaker(name = "default", fallbackMethod = "hardCodedResponse") // there are lots of feature in circuitBreaker goto documentation
+//    @CircuitBreaker(name = "default", fallbackMethod = "hardCodedResponse") // there are lots of feature in circuitBreaker goto documentation
+//    @RateLimiter(name = "default") //in 10seconds I want to allow only 1000 calls for sample api;
+    @Bulkhead(name = "default")
     public String sampleApi(){
 
         logger.info("Sample api call received");
