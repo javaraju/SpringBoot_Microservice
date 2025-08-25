@@ -47,6 +47,42 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
+
+<!--		this is for zipkin (used for distributed -->
+<!--		tracing- all microservices send the details to -->
+<!--		the distributed tracing (zipkin) and it will store data into indata memory and real databases)-->
+
+		<!-- SB3 :  Micrometer
+            > OpenTelemetry
+            > Zipkin
+-->
+
+		<!-- Micrometer - Vendor-neutral application observability facade.
+            Instrument your JVM-based application code without vendor lock-in.
+            Observation (Metrics & Logs) + Tracing.
+        -->
+
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-observation</artifactId>
+		</dependency>
+
+		<!-- OPTION 1: Open Telemetry as Bridge (RECOMMENDED) -->
+		<!-- Open Telemetry
+            - Simplified Observability (metrics, logs, and traces) -->
+
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-tracing-bridge-otel</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.opentelemetry</groupId>
+			<artifactId>opentelemetry-exporter-zipkin</artifactId>
+		</dependency>
+
+<!--		these are related to zipkin above all three dependencies-->
+
 <!--		Use for circuit breaker to default response when any one microservices down (fault tolerance or fall back response)-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
