@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  currency-exchange-service:
+    image: rajukr/mmv2-currency-exchange-service:0.0.1-SNAPSHOT
+    ports:
+      - "8000:8000"
+    networks:
+      - currency-network
+
+networks:
+  currency-network:
