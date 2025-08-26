@@ -7,6 +7,18 @@ services:
       - "8000:8000"
     networks:
       - currency-network
+    depends_on:
+      - naming-server
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://naming-server:8761/eureka
+
+
+  naming-server:
+    image: rajukr/mmv2-naming-server:0.0.1-SNAPSHOT
+    ports:
+      - "8761:8761"
+    networks:
+      - currency-network
 
 networks:
   currency-network:

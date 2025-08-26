@@ -27,7 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>24</java.version>
+		<java.version>18</java.version>
 		<spring-cloud.version>2025.0.0</spring-cloud.version>
 	</properties>
 	<dependencies>
@@ -73,6 +73,18 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>3.5.4</version>
+				<!--				this configuration part not working for create docker image-->
+				<!--				after adding this below configuration part we just need to run -> go to plugins->-->
+				<!--				go to spring-boot-> double click on spring-boot:build-image and image will create -->
+				<!--				in docker with the name of below image name but there was some issue and its not created-->
+				<!--				and i added dockerfile place of this so below part not working-->
+				<configuration>
+					<image>
+						<name>rajukr/mmv2-${project.artifactId}:${project.version}</name>
+					</image>
+					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
